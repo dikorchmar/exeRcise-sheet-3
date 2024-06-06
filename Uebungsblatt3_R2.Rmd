@@ -21,6 +21,17 @@ c)  For all of the following tasks in this exercise sheet we ask you to
 d)  Name 2 strengths and 2 weaknesses of git. (Don't forget to create a
     commit after this answer, see *1c*)
     
+    **Strengths**
+
+    • Very hard to lose files with git
+
+    • History allows you to go back and understand change
+
+    **Weaknesses**
+
+    • Can be a bit complicated to use (esp. at first)
+
+    • History takes up file space (only little)
     
 e)  Knit this exercise sheet. Some new files will automatically be
     generated when knitting the sheet e.g. the HTML page. Ignore these
