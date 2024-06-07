@@ -162,6 +162,10 @@ c)  Put the name / title of the dataset and a link to it below.
 
 d)  Come up with a (research) question you want to answer with the data and briefly explain why you believe this is an interesting question within one sentence. It should be a question that can be answered with the dataset and using R.
 
+**Research question:** How has the distribution of alcohol consumption by type (wine, beer, and spirits) changed over time in high-income countries, and what are the recent trends?
+
+**Explanation:** Understanding the shifts in alcohol consumption patterns across different types (wine, beer, and spirits) over time in high-income countries can provide insights into changing preferences and societal trends.
+
 e)  Use R to answer your chosen question.
 
 f)  Create a meaningful plot / figure with the dataset. Make sure to provide a figure caption (via the chunk options / Rmarkdown) and correctly label the figure.
