@@ -99,6 +99,20 @@ However, this method can introduce slight inaccuracies. For example, entries lik
 
 c)  Calculate the total number of babies born in Munich in 2022 and 2023. Which year had the bigger baby-boom?
 
+```{r}
+total_2022 <- sum(vornamen_2022$Anzahl, na.rm = TRUE)
+total_2023 <- sum(vornamen_2023$Anzahl, na.rm = TRUE)
+
+cat("Total babies born in 2022:", total_2022, "\n")
+cat("Total babies born in 2023:", total_2023, "\n")
+
+if (total_2022 > total_2023) {
+  cat("2022 had the bigger baby-boom.\n")
+} else {
+  cat("2023 had the bigger baby-boom.\n")
+}
+```
+
 d)  Add a new column `year` to both datasets which holds the correct year for each.
 
 e)  Combine both datasets into one using `bind_rows()`.
