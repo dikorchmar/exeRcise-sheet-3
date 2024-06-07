@@ -140,7 +140,8 @@ popular_names <- combined_vornamen %>%
 
 top_ten_names = head(popular_names, 10)
 
-kable(top_ten_names, caption = "Top 10 most popular baby names in Munich across the years 2022 and 2023")
+kable(top_ten_names, caption = "Top 10 most popular baby 
+      names in Munich across the years 2022 and 2023")
 
 ```
 
@@ -148,12 +149,16 @@ kable(top_ten_names, caption = "Top 10 most popular baby names in Munich across 
 
 a)  Go to <https://github.com/owid/owid-datasets/tree/master/datasets> and choose a dataset that interests you. You can have a look at <https://ourworldindata.org/> to gather some inspiration.
 
+**Status**: Done.
+
 b)  Download the dataset and track it in git.
+
+**Status**: Done.
 
 c)  Put the name / title of the dataset and a link to it below.
 
--   Dataset Name: ...
--   Link: <https://github.com/owid/owid-datasets/>...
+-   Dataset Name: Alcohol consumption by type since 1890 (Alexander & Holmes, 2017)
+-   Link: <https://github.com/owid/owid-datasets/blob/a24e0de2c034fe13140aab88ef7579a150151ce2/datasets/Alcohol%20consumption%20by%20type%20since%201890%20(Alexander%20%26%20Holmes%2C%202017)/Alcohol%20consumption%20by%20type%20since%201890%20(Alexander%20%26%20Holmes%2C%202017).csv>
 
 d)  Come up with a (research) question you want to answer with the data and briefly explain why you believe this is an interesting question within one sentence. It should be a question that can be answered with the dataset and using R.
 
