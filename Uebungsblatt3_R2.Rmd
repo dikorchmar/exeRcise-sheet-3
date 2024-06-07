@@ -168,24 +168,47 @@ d)  Come up with a (research) question you want to answer with the data and brie
 
 e)  Use R to answer your chosen question.
 
+To analyze the trends in alcohol consumption by type (wine, beer, and spirits) over time in high-income countries, I calculate the average consumption for each alcohol type for each year.
+
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
 library (readr)
-alcohol_data <- read_csv(file.path("Alcohol consumption by type since 1890 (Alexander & Holmes, 2017).csv"))
+library(dplyr)
+
+alcohol_data <- read_csv(
+  file.path("Alcohol consumption by type since 1890 (Alexander & Holmes, 2017).csv"))
 
 
-average_consumption <- alcohol_data %>%
-  group_by(Entity) %>%
+average_consumption_over_time <- alcohol_data %>%
+  group_by(Year) %>%
   summarize(Wine = mean(`Wine (% total alcohol)`),
             Beer = mean(`Beer (% total alcohol)`),
             Spirits = mean(`Spirits (% total alcohol)`))
 
+average_consumption_over_time[, 2:4] <- round(average_consumption_over_time[, 2:4], 1)
 
 
-average_consumption[, 2:4] <- round(average_consumption[, 2:4], 1)
-
-kable(average_consumption, caption = "Average Alcohol Consumption by Type 
+# Print the average consumption over time
+kable(average_consumption_over_time, caption = "Average Alcohol Consumption by Type 
       in high-income countries (1890 - 2014)")
+
 ```
 
 f)  Create a meaningful plot / figure with the dataset. Make sure to provide a figure caption (via the chunk options / Rmarkdown) and correctly label the figure.
+
+For visualizing the trends in alcohol consumption by type (wine, beer, and spirits) over time in high-income countries, I create a line plot:
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+library(ggplot2)
+
+ggplot(average_consumption_over_time, aes(x = Year)) +
+  geom_line(aes(y = Wine, color = "Wine")) +
+  geom_line(aes(y = Beer, color = "Beer")) +
+  geom_line(aes(y = Spirits, color = "Spirits")) +
+  labs(title = "Average Alcohol Consumption by Type Over Time",
+       x = "Year",
+       y = "Average Percentage") +
+  scale_color_manual(values = c("Wine" = "red", "Beer" = "blue", "Spirits" = "green"),
+                     name = "Alcohol Type") +
+  theme_minimal()
+```
 
