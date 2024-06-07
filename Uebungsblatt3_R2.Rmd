@@ -168,4 +168,24 @@ d)  Come up with a (research) question you want to answer with the data and brie
 
 e)  Use R to answer your chosen question.
 
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+library (readr)
+alcohol_data <- read_csv(file.path("Alcohol consumption by type since 1890 (Alexander & Holmes, 2017).csv"))
+
+
+average_consumption <- alcohol_data %>%
+  group_by(Entity) %>%
+  summarize(Wine = mean(`Wine (% total alcohol)`),
+            Beer = mean(`Beer (% total alcohol)`),
+            Spirits = mean(`Spirits (% total alcohol)`))
+
+
+
+average_consumption[, 2:4] <- round(average_consumption[, 2:4], 1)
+
+kable(average_consumption, caption = "Average Alcohol Consumption by Type 
+      in high-income countries (1890 - 2014)")
+```
+
 f)  Create a meaningful plot / figure with the dataset. Make sure to provide a figure caption (via the chunk options / Rmarkdown) and correctly label the figure.
+
